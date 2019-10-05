@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { getAllStarships } from './services/sw-api';
 import Starship from './Components/Starship/Starship';
 import Header from './Components/Header/Header';
+import Details from './Pages/Details'
 import logo from './logo.svg';
 import './App.css';
 
@@ -31,12 +32,12 @@ class App extends Component {
               starships={this.state.starships}
             />
           }/>
-          {/* <Route path='/starships/:idx' render={(props) => 
-            <StarshipPage
+          <Route path='/starships/:idx' render={(props) => 
+            <Details
               {...props}
               getStarship={this.getStarship}
             />
-          }/> */}
+          }/>
         </Switch>
       </div>
     );
